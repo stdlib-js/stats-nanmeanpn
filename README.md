@@ -56,38 +56,32 @@ The [arithmetic mean][arithmetic-mean] is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-nanmeanpn
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-nanmeanpn = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var nanmeanpn = require( 'path/to/vendor/umd/stats-nanmeanpn/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.nanmeanpn;
-})();
-</script>
+var nanmeanpn = require( '@stdlib/stats-nanmeanpn' );
 ```
 
 #### nanmeanpn( x\[, options] )
@@ -100,10 +94,7 @@ var array = require( '@stdlib/ndarray-array' );
 var x = array( [ 1.0, NaN, -2.0, 4.0 ] );
 
 var y = nanmeanpn( x );
-// returns <ndarray>
-
-var v = y.get();
-// returns 1.0
+// returns <ndarray>[ 1.0 ]
 ```
 
 The function has the following parameters:
@@ -120,81 +111,58 @@ The function accepts the following options:
 By default, the function performs a reduction over all elements in a provided input [ndarray][@stdlib/ndarray/ctor]. To perform a reduction over specific dimensions, provide a `dims` option.
 
 ```javascript
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var array = require( '@stdlib/ndarray-array' );
 
 var x = array( [ 1.0, NaN, -2.0, 4.0 ], {
     'shape': [ 2, 2 ],
     'order': 'row-major'
 });
-var v = ndarray2array( x );
-// returns [ [ 1.0, NaN ], [ -2.0, 4.0 ] ]
+// returns <ndarray>[ [ 1.0, NaN ], [ -2.0, 4.0 ] ]
 
 var y = nanmeanpn( x, {
     'dims': [ 0 ]
 });
-// returns <ndarray>
-
-v = ndarray2array( y );
-// returns [ -0.5, 4.0 ]
+// returns <ndarray>[ -0.5, 4.0 ]
 
 y = nanmeanpn( x, {
     'dims': [ 1 ]
 });
-// returns <ndarray>
-
-v = ndarray2array( y );
-// returns [ 1.0, 1.0 ]
+// returns <ndarray>[ 1.0, 1.0 ]
 
 y = nanmeanpn( x, {
     'dims': [ 0, 1 ]
 });
-// returns <ndarray>
-
-v = y.get();
-// returns 1.0
+// returns <ndarray>[ 1.0 ]
 ```
 
 By default, the function excludes reduced dimensions from the output [ndarray][@stdlib/ndarray/ctor]. To include the reduced dimensions as singleton dimensions, set the `keepdims` option to `true`.
 
 ```javascript
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var array = require( '@stdlib/ndarray-array' );
 
 var x = array( [ 1.0, NaN, -2.0, 4.0 ], {
     'shape': [ 2, 2 ],
     'order': 'row-major'
 });
-
-var v = ndarray2array( x );
-// returns [ [ 1.0, NaN ], [ -2.0, 4.0 ] ]
+// returns <ndarray>[ [ 1.0, NaN ], [ -2.0, 4.0 ] ]
 
 var y = nanmeanpn( x, {
     'dims': [ 0 ],
     'keepdims': true
 });
-// returns <ndarray>
-
-v = ndarray2array( y );
-// returns [ [ -0.5, 4.0 ] ]
+// returns <ndarray>[ [ -0.5, 4.0 ] ]
 
 y = nanmeanpn( x, {
     'dims': [ 1 ],
     'keepdims': true
 });
-// returns <ndarray>
-
-v = ndarray2array( y );
-// returns [ [ 1.0 ], [ 1.0 ] ]
+// returns <ndarray>[ [ 1.0 ], [ 1.0 ] ]
 
 y = nanmeanpn( x, {
     'dims': [ 0, 1 ],
     'keepdims': true
 });
-// returns <ndarray>
-
-v = ndarray2array( y );
-// returns [ [ 1.0 ] ]
+// returns <ndarray>[ [ 1.0 ] ]
 ```
 
 By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having a [data type][@stdlib/ndarray/dtypes] determined by the function's output data type [policy][@stdlib/ndarray/output-dtype-policies]. To override the default behavior, set the `dtype` option.
@@ -268,19 +236,14 @@ The method accepts the following options:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-dtype@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var uniform = require( '@stdlib/random-base-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var bernoulli = require( '@stdlib/random-base-bernoulli' );
+var getDType = require( '@stdlib/ndarray-dtype' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var ndarray = require( '@stdlib/ndarray-ctor' );
+var nanmeanpn = require( '@stdlib/stats-nanmeanpn' );
 
 function rand() {
     if ( bernoulli( 0.8 ) < 1 ) {
@@ -307,11 +270,6 @@ console.log( dt );
 
 // Print the results:
 console.log( ndarray2array( y ) );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -411,13 +369,13 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/stats-nanmeanpn/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/umd
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
-[@stdlib/ndarray/output-dtype-policies]: https://github.com/stdlib-js/ndarray-output-dtype-policies/tree/umd
+[@stdlib/ndarray/output-dtype-policies]: https://github.com/stdlib-js/ndarray-output-dtype-policies
 
-[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tree/umd
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
 [arithmetic-mean]: https://en.wikipedia.org/wiki/Arithmetic_mean
 
