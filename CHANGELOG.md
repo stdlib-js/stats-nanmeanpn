@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-12-05)
+## Unreleased (2025-12-18)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`79af092`](https://github.com/stdlib-js/stdlib/commit/79af0924a39db5d71a84faf0f1c05d9fcac76956) - **docs:** update return annotations to use ndarray instance notation for `stats/nanmeanpn` [(#9184)](https://github.com/stdlib-js/stdlib/pull/9184) _(by Sachin Pangal)_
 -   [`0a95ffb`](https://github.com/stdlib-js/stdlib/commit/0a95ffb6202ca4eb7bd5f10f63eaf144b2646ea5) - **docs:** fix JSDoc name tag in `stats/nanmeanpn` _(by Philipp Burckhardt)_
 -   [`2eb8eb5`](https://github.com/stdlib-js/stdlib/commit/2eb8eb54227d35ea5f5d4df5174393064c2b0dac) - **feat:** add `stats/nanmeanpn` [(#8780)](https://github.com/stdlib-js/stdlib/pull/8780) _(by Pratik, Athan Reines)_
 
@@ -35,11 +36,12 @@
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Philipp Burckhardt
 -   Pratik
+-   Sachin Pangal
 
 </section>
 
