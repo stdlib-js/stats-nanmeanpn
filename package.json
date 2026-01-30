@@ -42,7 +42,8 @@
     "@stdlib/stats-base-ndarray-dnanmeanpn": "github:stdlib-js/stats-base-ndarray-dnanmeanpn#main",
     "@stdlib/stats-base-ndarray-nanmeanpn": "github:stdlib-js/stats-base-ndarray-nanmeanpn#main",
     "@stdlib/stats-base-ndarray-snanmeanpn": "github:stdlib-js/stats-base-ndarray-snanmeanpn#main",
-    "@stdlib/types": "^0.4.3"
+    "@stdlib/types": "^0.4.3",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
   },
   "devDependencies": {
     "@stdlib/array-filled-by": "^0.2.1",
