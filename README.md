@@ -336,8 +336,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/stats-nanmeanpn.svg
 [npm-url]: https://npmjs.org/package/@stdlib/stats-nanmeanpn
 
-[test-image]: https://github.com/stdlib-js/stats-nanmeanpn/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/stats-nanmeanpn/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/stats-nanmeanpn/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/stats-nanmeanpn/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/stats-nanmeanpn/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/stats-nanmeanpn?branch=main
