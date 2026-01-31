@@ -65,7 +65,7 @@ The [arithmetic mean][arithmetic-mean] is defined as
 To use in Observable,
 
 ```javascript
-nanmeanpn = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@umd/browser.js' )
+nanmeanpn = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@v0.1.0-umd/browser.js' )
 ```
 
 To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
@@ -77,7 +77,7 @@ var nanmeanpn = require( 'path/to/vendor/umd/stats-nanmeanpn/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@v0.1.0-umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -252,7 +252,7 @@ The method accepts the following options:
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-dtype@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-nanmeanpn@v0.1.0-umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
